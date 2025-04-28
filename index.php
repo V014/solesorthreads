@@ -22,7 +22,7 @@
 
 							<!-- Logo -->
 								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Soles or Threads</span>
+									<span class="symbol"><img src="images/symbol.png" alt="" /></span><span class="title"><img src="images/logo.png" alt="" srcset=""></span>
 								</a>
 
 							<!-- Nav -->
