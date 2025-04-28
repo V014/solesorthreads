@@ -40,14 +40,14 @@
             <nav class="navbar navbar-light bg-light justify-content-between">
                <div id="mySidenav" class="sidenav">
                   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                  <a href="index.html">Home</a>
-                  <a href="products.html">Products</a>
-                  <a href="about.html">About</a>
-                  <a href="client.html">Client</a>
-                  <a href="contact.html">Contact</a>
+                  <a href="index.php">Home</a>
+                  <a href="products.php">Products</a>
+                  <a href="about.php">About</a>
+                  <a href="client.php">Client</a>
+                  <a href="contact.php">Contact</a>
                </div>
                <span class="toggle_icon" onclick="openNav()"><img src="images/toggle-icon.png"></span>
-               <a class="logo" href="index.html"><img src="images/logo.png"></a></a>
+               <a class="logo" href="index.php"><img src="images/logo.png"></a></a>
                <form class="form-inline ">
                   <div class="login_text">
                      <ul>
@@ -124,7 +124,7 @@
       <!-- footer section start -->
       <div class="footer_section layout_padding margin_top90">
          <div class="container">
-            <div class="footer_logo"><a href="index.html"><img src="images/footer-logo.png"></a></div>
+            <div class="footer_logo"><a href="index.php"><img src="images/footer-logo.png"></a></div>
             <div class="contact_section_2">
                <div class="row">
                   <div class="col-sm-4">
@@ -150,7 +150,7 @@
                      </div>
                   </div>
                   <div class="col-sm-4">
-                     <div class="footer_logo_1"><a href="index.html"><img src="images/footer-logo.png"></a></div>
+                     <div class="footer_logo_1"><a href="index.php"><img src="images/footer-logo.png"></a></div>
                      <p class="dummy_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</p>
                   </div>
                   <div class="col-sm-4">
