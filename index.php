@@ -40,10 +40,10 @@
 						<h2>Menu</h2>
 						<ul>
 							<li><a href="index.php">Home</a></li>
-							<li><a href="generic.php">Ipsum veroeros</a></li>
-							<li><a href="generic.php">Tempus etiam</a></li>
-							<li><a href="generic.php">Consequat dolor</a></li>
-							<li><a href="elements.php">Elements</a></li>
+							<li><a href="generic.php">Login</a></li>
+							<li><a href="generic.php">Register</a></li>
+							<li><a href="generic.php">About</a></li>
+							<li><a href="elements.php">Contact Us</a></li>
 						</ul>
 					</nav>
 
@@ -51,9 +51,9 @@
 					<div id="main">
 						<div class="inner">
 							<header>
-								<h1>This is Phantom, a free, fully responsive site<br />
-								template designed by <a href="http://html5up.net">HTML5 UP</a>.</h1>
-								<p>Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.</p>
+								<h1>Welcome to Soles or Threads !!<br />
+								We are here to connect you to your soles, <a href="http://html5up.net">get started</a>.</h1>
+								<p>We are here to connect you to your soles and we offer a wide selection of the best quality trendy sneakers for all ages.</p>
 							</header>
 							<section class="tiles">
 								<article class="style1">
