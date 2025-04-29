@@ -2,7 +2,7 @@
 class Database {
     // Placeholder for database connection
     private $host = 'localhost';
-    private $dbname = 'solesorthreads_db';
+    private $dbname = 'solesorthreads';
     private $username = 'root';
     private $password = ''; // Default password for XAMPP is empty
     private $conn;

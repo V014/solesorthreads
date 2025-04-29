@@ -1,3 +1,17 @@
+<?php
+require_once 'php/db_connect.php';
+require_once 'php/product_fetch.php';
+
+// Initialize database connection
+$db = new Database();
+$connection = $db->connect();
+
+// Initialize Product class
+$product = new Product($connection);
+
+// Fetch all products
+$products = $product->fetchAll();
+?>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -89,71 +103,32 @@
             <div class="row">
                <div class="col-sm-12">
                   <h1 class="product_taital">Our Products</h1>
-                  <p class="product_text">incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+                  <p class="product_text">Explore our wide range of products.</p>
                </div>
             </div>
             <div class="product_section_2 layout_padding">
                <div class="row">
-                  <div class="col-lg-3 col-sm-6">
-                     <div class="product_box">
-                        <h4 class="bursh_text">Beauty Bursh</h4>
-                        <p class="lorem_text">incididunt ut labore et dolore magna aliqua. Ut enim </p>
-                        <img src="images/img-1.jpg" class="image_1">
-                        <div class="btn_main">
-                           <div class="buy_bt">
-                              <ul>
-                                 <li><a href="#">Buy Now</a></li>
-                              </ul>
+                  <?php if ($products): ?>
+                        <?php foreach ($products as $product): ?>
+                           <div class="col-lg-3 col-sm-6">
+                              <div class="product_box">
+                                 <h4 class="bursh_text"><?php echo htmlspecialchars($product['name']); ?></h4>
+                                 <p class="lorem_text"><?php echo htmlspecialchars($product['description']); ?></p>
+                                 <img src="images/products/<?php echo htmlspecialchars($product['image']); ?>" class="image_1">
+                                 <div class="btn_main">
+                                    <div class="buy_bt">
+                                       <ul>
+                                          <li><a href="product_details.php?id=<?php echo $product['id']; ?>">Buy Now</a></li>
+                                       </ul>
+                                    </div>
+                                    <h3 class="price_text">Price MWK<?php echo htmlspecialchars($product['price']); ?></h3>
+                                 </div>
+                              </div>
                            </div>
-                           <h3 class="price_text">Price $30</h3>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-3 col-sm-6">
-                     <div class="product_box">
-                        <h4 class="bursh_text">Beauty Bursh</h4>
-                        <p class="lorem_text">incididunt ut labore et dolore magna aliqua. Ut enim </p>
-                        <img src="images/img-2.jpg" class="image_1">
-                        <div class="btn_main">
-                           <div class="buy_bt">
-                              <ul>
-                                 <li><a href="#">Buy Now</a></li>
-                              </ul>
-                           </div>
-                           <h3 class="price_text">Price $30</h3>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-3 col-sm-6">
-                     <div class="product_box">
-                        <h4 class="bursh_text">Beauty Bursh</h4>
-                        <p class="lorem_text">incididunt ut labore et dolore magna aliqua. Ut enim </p>
-                        <img src="images/img-3.jpg" class="image_1">
-                        <div class="btn_main">
-                           <div class="buy_bt">
-                              <ul>
-                                 <li><a href="#">Buy Now</a></li>
-                              </ul>
-                           </div>
-                           <h3 class="price_text">Price $30</h3>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-3 col-sm-6">
-                     <div class="product_box">
-                        <h4 class="bursh_text">Beauty Bursh</h4>
-                        <p class="lorem_text">incididunt ut labore et dolore magna aliqua. Ut enim </p>
-                        <img src="images/img-4.jpg" class="image_1">
-                        <div class="btn_main">
-                           <div class="buy_bt">
-                              <ul>
-                                 <li><a href="#">Buy Now</a></li>
-                              </ul>
-                           </div>
-                           <h3 class="price_text">Price $30</h3>
-                        </div>
-                     </div>
-                  </div>
+                        <?php endforeach; ?>
+                     <?php else: ?>
+                        <p>No products available at the moment.</p>
+                  <?php endif; ?>
                </div>
                <div class="seemore_bt"><a href="#">See More</a></div>
             </div>
