@@ -66,90 +66,36 @@
          <div class="container">
             <div class="row">
                <div class="col-md-6">
-                  <h1 class="contact_taital">Get In Touch</h1>
-                  <p class="contact_text">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation  eu </p>
+                  <h1 class="contact_taital">Register</h1>
+                  <p class="contact_text">Fill in this form to make purchases</p>
                </div>
                <div class="col-md-6">
                   <div class="contact_main">
-                     <div class="contact_bt"><a href="#">Contact Form</a></div>
-                     <div class="newletter_bt"><a href="#">Newletter</a></div>
+                     <div class="form">
+                        <form action="php/register.php" method="POST">
+                           <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Username.." name="username" require>
+                           </div>
+                           <div class="form-group">
+                              <input type="email" class="form-control" placeholder="Email.." name="email" require>   
+                           </div>
+                           <div class="form-group">
+                              <input type="password" class="form-control" placeholder="Password.." name="password" require>
+                           </div>
+                           <div class="form-group">
+                              <input type="submit" class="form-control btn-info" name="submit" value="Register">
+                           </div>
+                        </form>
+                     </div>
                   </div>
                </div>
             </div>
          </div>
-         <div class="map_main">
-            <div class="map-responsive">
-               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2282.8352496371144!2d35.00817959385925!3d-15.790452153394735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18d845a7b76ce68d%3A0x9de528f83fb4b182!2s6254%2BWX3%20Blantyre%20Market%2C%20Market%20Street%2C%20Blantyre!5e0!3m2!1sen!2smw!4v1744916520724!5m2!1sen!2smw" width="600" height="400" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
-            </div>
-         </div>
       </div>
-      <!-- contact section end -->
+      <!-- register section end -->
       <!-- footer section start -->
-      <div class="footer_section layout_padding">
-         <div class="container">
-            <div class="footer_logo"><a href="index.php"><img src="images/footer-logo.png"></a></div>
-            <div class="contact_section_2">
-               <div class="row">
-                  <div class="col-sm-4">
-                     <h3 class="address_text">Contact Us</h3>
-                     <div class="address_bt">
-                        <ul>
-                           <li>
-                              <a href="#">
-                              <i class="fa fa-map-marker" aria-hidden="true"></i><span class="padding_left10">Address : Loram Ipusm</span>
-                              </a>
-                           </li>
-                           <li>
-                              <a href="#">
-                              <i class="fa fa-phone" aria-hidden="true"></i><span class="padding_left10">Call : +01 1234567890</span>
-                              </a>
-                           </li>
-                           <li>
-                              <a href="#">
-                              <i class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left10">Email : demo@gmail.com</span>
-                              </a>
-                           </li>
-                        </ul>
-                     </div>
-                  </div>
-                  <div class="col-sm-4">
-                     <div class="footer_logo_1"><a href="index.php"><img src="images/footer-logo.png"></a></div>
-                     <p class="dummy_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</p>
-                  </div>
-                  <div class="col-sm-4">
-                     <div class="main">
-                        <h3 class="address_text">Best Products</h3>
-                        <p class="ipsum_text">dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="social_icon">
-               <ul>
-                  <li>
-                     <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                  </li>
-                  <li>
-                     <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                  </li>
-                  <li>
-                     <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                  </li>
-                  <li>
-                     <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                  </li>
-               </ul>
-            </div>
-         </div>
-      </div>
+      <?php include 'footer.php'; ?>
       <!-- footer section end -->
-      <!-- copyright section start -->
-      <div class="copyright_section">
-         <div class="container">
-            <p class="copyright_text">2020 All Rights Reserved. Design by <a href="https://html.design">Free html  Templates</a></p>
-         </div>
-      </div>
-      <!-- copyright section end -->
       <!-- Javascript files-->
       <script src="js/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>
