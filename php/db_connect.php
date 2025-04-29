@@ -1,20 +1,29 @@
 <?php
-// Placeholder for database connection
-$host = 'localhost';
-$dbname = 'solesorthreads';
-$username = 'root';
-$password = '';
+class Database {
+    // Placeholder for database connection
+    private $host = 'localhost';
+    private $dbname = 'solesorthreads_db';
+    private $username = 'root';
+    private $password = ''; // Default password for XAMPP is empty
+    private $conn;
 
-try {
-    // Creating a new PDO instance
-    $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-    
-    // Setting the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
-    // echo "Connected successfully!";
-} catch (PDOException $e) {
-    // Display error message if the connection fails
-    echo "Connection failed: " . $e->getMessage();
+    // Method to establish a database connection
+    public function connect() {
+        if ($this->conn === null) {
+            try {
+                $this->conn = new PDO(
+                    "mysql:host={$this->host};dbname={$this->dbname};charset=utf8",
+                    $this->username,
+                    $this->password
+                );
+                $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            } catch (PDOException $e) {
+                // Handle connection error
+                echo "Connection failed: " . $e->getMessage();
+                $this->conn = null;
+            }
+        }
+        return $this->conn;
+    }
 }
 ?>
