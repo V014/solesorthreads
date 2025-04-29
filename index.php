@@ -144,7 +144,6 @@
                         <div class="btn_main">
                            <div class="buy_bt">
                               <ul>
-                                 <li class="active"><a href="#">Buy Now</a></li>
                                  <li><a href="#">Buy Now</a></li>
                               </ul>
                            </div>
@@ -160,7 +159,6 @@
                         <div class="btn_main">
                            <div class="buy_bt">
                               <ul>
-                                 <li class="active"><a href="#">Buy Now</a></li>
                                  <li><a href="#">Buy Now</a></li>
                               </ul>
                            </div>
@@ -176,7 +174,6 @@
                         <div class="btn_main">
                            <div class="buy_bt">
                               <ul>
-                                 <li class="active"><a href="#">Buy Now</a></li>
                                  <li><a href="#">Buy Now</a></li>
                               </ul>
                            </div>
@@ -192,7 +189,6 @@
                         <div class="btn_main">
                            <div class="buy_bt">
                               <ul>
-                                 <li class="active"><a href="#">Buy Now</a></li>
                                  <li><a href="#">Buy Now</a></li>
                               </ul>
                            </div>
