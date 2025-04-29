@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = new User($connection);
 
     if ($user->emailExists($email)) {
-        $_SESSION['error'] = "Email already exists. Please use a different email."; // Set error message in session
+        $_SESSION['error'] = "Email already exists!"; // Set error message in session
         log_error($connection, "Email already exists", "User registration", $email); // Log the error
         header("Location: ../register.php?email_already_exists"); // Redirect to register page
     } else {
@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_id'] = $connection->lastInsertId(); // Get the last inserted user ID
             header("Location: ../home.php"); // Redirect to dashboard page
         } else {
-            $_SESSION['error'] = "Error registering user. Please try again."; // Set error message in session
+            $_SESSION['error'] = "Error registering user!"; // Set error message in session
             log_error($connection, "Error registering user", "User registration", $email); // Log the error
             header("Location: ../register.php?registration_failed"); // Redirect to register page
         }

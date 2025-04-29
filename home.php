@@ -45,6 +45,7 @@
                   <a href="about.php">About</a>
                   <a href="client.php">Client</a>
                   <a href="contact.php">Contact</a>
+                  <a href="php/logout.php">Logout</a>
                </div>
                <span class="toggle_icon" onclick="openNav()"><img src="images/toggle-icon.png"></span>
                <a class="logo" href="index.php"><img src="images/logo.png"></a></a>
