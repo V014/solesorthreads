@@ -79,7 +79,7 @@
          </div>
          <div class="map_main">
             <div class="map-responsive">
-               <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&amp;q=Eiffel+Tower+Paris+France" width="600" height="400" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2282.8352496371144!2d35.00817959385925!3d-15.790452153394735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18d845a7b76ce68d%3A0x9de528f83fb4b182!2s6254%2BWX3%20Blantyre%20Market%2C%20Market%20Street%2C%20Blantyre!5e0!3m2!1sen!2smw!4v1744916520724!5m2!1sen!2smw" width="600" height="400" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
             </div>
          </div>
       </div>
