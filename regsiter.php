@@ -41,9 +41,9 @@
                <div id="mySidenav" class="sidenav">
                   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                   <a href="index.php">Home</a>
-                  <a href="products.php">Products</a>
+                  <a href="login.php">login</a>
+                  <a href="register.php">Register</a>
                   <a href="about.php">About</a>
-                  <a href="client.php">Client</a>
                   <a href="contact.php">Contact</a>
                </div>
                <span class="toggle_icon" onclick="openNav()"><img src="images/toggle-icon.png"></span>
