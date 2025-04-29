@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (isset($_SESSION['error'])) {
+   $error = $_SESSION['error']; // Retrieve error message from session
+   unset($_SESSION['error']); // Clear the error message after displaying it
+} else {
+   $error = null; // Initialize error variable if not set
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -83,7 +93,15 @@
                               <input type="password" class="form-control" placeholder="Password.." name="password" require>
                            </div>
                            <div class="form-group">
-                              <input type="submit" class="form-control btn-info" name="submit" value="Register">
+                              <input type="submit" class="form-control btn-info" value="Register" name="submit">
+                           </div>
+                           <!-- display error message -->
+                           <div class="form-group">
+                              <?php if(!empty($error)) { ?>
+                                 <div class="alert alert-danger" role="alert" style="text-align: center; margin-top: 10px;">
+                                    <?php echo $error; ?>
+                                 </div>
+                              <?php } ?>
                            </div>
                         </form>
                      </div>

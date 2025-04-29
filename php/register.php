@@ -1,32 +1,57 @@
 <?php
+session_start();
 include 'db_connect.php';
 
+class User {
+    private $connection;
+
+    public function __construct($connection) {
+        $this->connection = $connection;
+    }
+
+    // Check if email already exists
+    public function emailExists($email) {
+        $stmt = $this->connection->prepare("SELECT * FROM users WHERE email = ?");
+        $stmt->bindParam(1, $email, PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->rowCount() > 0;
+    }
+
+    // Register a new user
+    public function register($username, $email, $password) {
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $stmt = $this->connection->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
+        $stmt->bindParam(1, $username, PDO::PARAM_STR);
+        $stmt->bindParam(2, $email, PDO::PARAM_STR);
+        $stmt->bindParam(3, $hashedPassword, PDO::PARAM_STR);
+        return $stmt->execute();
+    }
+}
+
+// Initialize database connection
+$db = new Database();
+$connection = $db->connect();
+
+// Handle form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $email = $_POST["email"];
-    $password = password_hash($_POST["password"], PASSWORD_DEFAULT); // Hash password
+    $password = $_POST["password"];
 
-    // Check if email already exists
-    $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    $user = new User($connection);
 
-    if ($result->num_rows > 0) {
-        echo json_encode(["success" => false, "message" => "User already exists."]);
+    if ($user->emailExists($email)) {
+        $_SESSION['error'] = "Email already exists. Please use a different email.";
+        header("Location: ../register.php?email_already_exists"); // Redirect to register page
     } else {
-        // Insert user into database
-        $stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
-        $stmt->bind_param(NULL, $username, $email, $password, NULL);
-        if ($stmt->execute()) {
-            $_SESSION['logged'] = true;
+        if ($user->register($username, $email, $password)) {
+            session_start();
             $_SESSION['username'] = $username;
+            $_SESSION['user_id'] = $connection->lastInsertId(); // Get the last inserted user ID
             header("Location: ../home.php"); // Redirect to dashboard page
-            // echo json_encode(["success" => true, "message" => "Registration successful!"]);
         } else {
-            header("Location: ../register.php"); // Redirect to dashboard page
-            echo "<script>alert('Invalid login credentials');</script>";
-            // echo json_encode(["success" => false, "message" => "Error registering user."]);
+            $_SESSION['error'] = "Error registering user. Please try again.";
+            header("Location: ../register.php?registration_failed"); // Redirect to register page
         }
     }
 }
